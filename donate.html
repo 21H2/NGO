@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Ek Nayi Soch</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .top-bar {
+            background-color: #f8f8f8;
+            padding: 5px 0;
+            font-size: 14px;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .social-icons a {
+            margin-left: 10px;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #4CAF50;
+        }
+
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .logo img {
+            height: 60px;
+            animation: pulse 2s infinite;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #4CAF50;
+        }
+
+        .donate-btn {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .donate-btn:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        .donate-hero {
+            background-image: url('https://source.unsplash.com/1600x900/?charity,donation');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            position: relative;
+        }
+
+        .donate-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-out;
+        }
+
+        .donate-hero h1 {
+            font-size: 48px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            animation: slideIn 0.5s ease-out 0.5s both;
+        }
+
+        .donate-content {
+            padding: 80px 0;
+        }
+
+        .donate-options {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .donate-option {
+            flex-basis: calc(33.333% - 20px);
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .donate-option:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .donate-option i {
+            font-size: 48px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .donate-option h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .donate-option p {
+            margin-bottom: 20px;
+        }
+
+        .donate-form {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 40px;
+            margin-top: 40px;
+            animation: fadeIn 0.5s ease-out 1s both;
+        }
+
+        .donate-form h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-group input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            flex-basis: calc(25% - 20px);
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: #4CAF50;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+        }
+
+        @media (max-width: 768px) {
+            .donate-hero h1 {
+                font-size: 36px;
+            }
+
+            .donate-option {
+                flex-basis: 100%;
+            }
+
+            .footer-column {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="container top-bar-content">
+                <div><i class="fas fa-envelope"></i> info@eknayisochnoida.com | <i class="fas fa-phone"></i> +91 9999999999</div>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container main-header">
+            <div class="logo">
+                <img src="https://source.unsplash.com/60x60/?logo" alt="Ek Nayi Soch Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </nav>
+            <a href="donate.html" class="donate-btn"><i class="fas fa-heart"></i> Donate Now</a>
+        </div>
+    </header>
+
+    <section class="donate-hero">
+        <h1>Make a Difference Today</h1>
+    </section>
+
+    <section class="donate-content">
+        <div class="container">
+            <div class="donate-options">
+                <div class="donate-option">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Education</h3>
+                    <p>Support our education programs for underprivileged children.</p>
+                    <a href="#donate-form" class="donate-btn">Donate Now</a>
+                </div>
+                <div class="donate-option">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Healthcare</h3>
+                    <p>Help us provide essential healthcare services to those in need.</p>
+                    <a href="#donate-form" class="donate-btn">Donate Now</a>
+                </div>
+                <div class="donate-option">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>Skill Development</h3>
+                    <p>Empower youth with vocational training and job placement support.</p>
+                    <a href="#donate-form" class="donate-btn">Donate Now</a>
+                </div>
+            </div>
+
+            <div id="donate-form" class="donate-form">
+                <h2>Donate Now</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Donation Amount (INR)</label>
+                        <input type="number" id="amount" name="amount" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="program">Choose a Program</label>
+                        <select id="program" name="program" required>
+                            <option value="">Select a program</option>
+                            <option value="education">Education</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="skill-development">Skill Development</option>
+                            <option value="general">General Fund</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Donate Now" class="donate-btn">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3><i class="fas fa-info-circle"></i> About Us</h3>
+                    <p>Ek Nayi Soch is a non-profit organization dedicated to empowering underprivileged communities in Noida through education, healthcare, and skill development initiatives.</p>
+                </div>
+                <div class="footer-column">
+                    <h3><i class="fas fa-link"></i> Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3><i class="fas fa-envelope"></i> Contact Us</h3>
+                    <p>
+                        <i class="fas fa-map-marker-alt"></i> Ek Nayi Soch<br>
+                        123, Sector 18, Noida,<br>
+                        Uttar Pradesh - 201301
+                    </p>
+                    <p><i class="fas fa-phone"></i> Phone: +91 9999999999</p>
+                    <p><i class="fas fa-envelope"></i> Email: info@eknayisochnoida.com</p>
+                </div>
+                <div class="footer-column">
+                    <h3><i class="fas fa-share-alt"></i> Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Ek Nayi Soch. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const animateOnScroll = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = `${entry.target.dataset.animation} 0.5s ease-out forwards`;
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(animateOnScroll, {
+                root: null,
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.donate-option').forEach(item => {
+                item.style.opacity = '0';
+                item.dataset.animation = 'fadeIn';
+                observer.observe(item);
+            });
+
+            document.querySelector('.donate-form').style.opacity = '0';
+            document.querySelector('.donate-form').dataset.animation = 'fadeIn';
+            observer.observe(document.querySelector('.donate-form'));
+        });
+    </script>
+</body>
+</html>

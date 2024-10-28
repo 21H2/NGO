@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ek Nayi Soch - NGO in Noida | Empowering Lives Through Education and Healthcare</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .top-bar {
+            background-color: #f8f8f8;
+            padding: 5px 0;
+            font-size: 14px;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .social-icons a {
+            margin-left: 10px;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #4CAF50;
+        }
+
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .logo img {
+            height: 60px;
+            animation: pulse 2s infinite;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #4CAF50;
+        }
+
+        .donate-btn {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .donate-btn:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        .hero {
+            background-image: url('https://source.unsplash.com/1600x900/?children,education');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            color: #fff;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+            animation: slideIn 0.5s ease-out 0.5s both;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .impact {
+            background-color: #f8f8f8;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .impact h2 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 40px;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .impact-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .impact-item {
+            flex-basis: 200px;
+            margin-bottom: 30px;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .impact-item i {
+            font-size: 48px;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .impact-item h3 {
+            font-size: 24px;
+            color: #4CAF50;
+            margin-bottom: 5px;
+        }
+
+        .programs {
+            padding: 80px 0;
+        }
+
+        .programs h2 {
+            font-size: 36px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 40px;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .programs-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .program-card {
+            flex-basis: calc(33.333% - 20px);
+            margin-bottom: 30px;
+            background-color: #fff;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .program-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .program-card-content {
+            padding: 20px;
+        }
+
+        .program-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .program-card p {
+            margin-bottom: 20px;
+        }
+
+        .learn-more-btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .learn-more-btn:hover {
+            background-color: #45a049;
+        }
+
+        .team {
+            background-color: #f8f8f8;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .team h2 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 40px;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .team-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .team-member {
+            flex-basis: calc(25% - 20px);
+            margin-bottom: 30px;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .team-member h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .team-member p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            flex-basis: calc(25% - 20px);
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: #4CAF50;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .impact-item, .program-card, .team-member {
+                flex-basis: 100%;
+            }
+
+            .footer-column {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="container top-bar-content">
+                <div><i class="fas fa-envelope"></i> info@eknayisochnoida.com | <i class="fas fa-phone"></i> +91 9999999999</div>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container main-header">
+            <div class="logo">
+                <img src="https://source.unsplash.com/60x60/?logo" alt="Ek Nayi Soch Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </nav>
+            <a href="donate.html" class="donate-btn"><i class="fas fa-heart"></i> Donate Now</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1><i class="fas fa-star"></i> Empowering Lives in Noida</h1>
+                <p>Join us in our mission to provide quality education and healthcare to underprivileged communities in Noida.</p>
+                <a href="donate.html" class="donate-btn"><i class="fas fa-hand-holding-heart"></i> Support Our Cause</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="impact">
+        <div class="container">
+            <h2><i class="fas fa-chart-line"></i> Our Impact</h2>
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <i class="fas fa-users"></i>
+                    <h3>5,000+</h3>
+                    <p>Lives Impacted</p>
+                </div>
+                <div class="impact-item">
+                    <i class="fas fa-book-reader"></i>
+                    <h3>3</h3>
+                    <p>Education Centers</p>
+                </div>
+                <div class="impact-item">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>2</h3>
+                    <p>Health Camps</p>
+                </div>
+                <div class="impact-item">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>100+</h3>
+                    <p>Volunteers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="programs">
+        <div class="container">
+            <h2><i class="fas fa-hands-helping"></i> Our Programs</h2>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <img src="https://source.unsplash.com/400x200/?education" alt="Education">
+                    <div class="program-card-content">
+                        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                        <p>Providing quality education to underprivileged children in Noida through our learning centers.</p>
+                        <a href="#" class="learn-more-btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <img src="https://source.unsplash.com/400x200/?healthcare" alt="Healthcare">
+                    <div class="program-card-content">
+                        <h3><i class="fas fa-heartbeat"></i> Healthcare</h3>
+                        <p>Organizing health camps and awareness programs for communities in need across Noida.</p>
+                        <a href="#" class="learn-more-btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <img  src="https://source.unsplash.com/400x200/?skill-development" alt="Skill Development">
+                    <div class="program-card-content">
+                        <h3><i class="fas fa-tools"></i> Skill Development</h3>
+                        <p>Empowering youth with vocational training and job placement support in Noida.</p>
+                        <a href="#" class="learn-more-btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team">
+        <div class="container">
+            <h2><i class="fas fa-users"></i> Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://source.unsplash.com/150x150/?man" alt="Shri Sanjay Sharma">
+                    <h4>Shri Sanjay Sharma</h4>
+                    <p>Founder</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://source.unsplash.com/150x150/?woman" alt="Shri Anil Sharma">
+                    <h4>Shri Anil Sharma</h4>
+                    <p>President</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://source.unsplash.com/150x150/?person" alt="Shri Sushil Kumar Jain">
+                    <h4>Shri Sushil Kumar Jain</h4>
+                    <p>Vice President</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://source.unsplash.com/150x150/?indian" alt="Shri Pankaj Garg">
+                    <h4>Shri Pankaj Garg</h4>
+                    <p>General Secretary</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3><i class="fas fa-info-circle"></i> About Us</h3>
+                    <p>Ek Nayi Soch is a non-profit organization dedicated to empowering underprivileged communities in Noida through education, healthcare, and skill development initiatives.</p>
+                </div>
+                <div class="footer-column">
+                    <h3><i class="fas fa-link"></i> Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3><i class="fas fa-envelope"></i> Contact Us</h3>
+                    <p>
+                        <i class="fas fa-map-marker-alt"></i> Ek Nayi Soch<br>
+                        123, Sector 18, Noida,<br>
+                        Uttar Pradesh - 201301
+                    </p>
+                    <p><i class="fas fa-phone"></i> Phone: +91 9999999999</p>
+                    <p><i class="fas fa-envelope"></i> Email: info@eknayisochnoida.com</p>
+                </div>
+                <div class="footer-column">
+                    <h3><i class="fas fa-share-alt"></i> Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Ek Nayi Soch. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const animateOnScroll = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = `${entry.target.dataset.animation} 0.5s ease-out forwards`;
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(animateOnScroll, {
+                root: null,
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.impact-item, .program-card, .team-member').forEach(item => {
+                item.style.opacity = '0';
+                item.dataset.animation = 'fadeIn';
+                observer.observe(item);
+            });
+
+            document.querySelectorAll('h2').forEach(item => {
+                item.style.opacity = '0';
+                item.dataset.animation = 'slideIn';
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>
