@@ -16,12 +16,6 @@
             to { transform: translateY(0); opacity: 1; }
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -47,7 +41,6 @@
             position: fixed;
             width: 100%;
             z-index: 1000;
-            animation: slideIn 0.5s ease-out;
         }
 
         .top-bar {
@@ -82,7 +75,6 @@
 
         .logo img {
             height: 60px;
-            animation: pulse 2s infinite;
         }
 
         nav ul {
@@ -106,28 +98,14 @@
             color: #4CAF50;
         }
 
-        .donate-btn {
-            background-color: #4CAF50;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .donate-btn:hover {
-            background-color: #45a049;
-            transform: scale(1.05);
-        }
-
         .hero {
+            background-image: url('https://source.unsplash.com/1600x900/?community,education');
             background-size: cover;
             background-position: center;
             height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: center;
             color: #fff;
             position: relative;
         }
@@ -140,7 +118,6 @@
             right: 0;
             bottom: 0;
             background: rgba(0, 0, 0, 0.5);
-            animation: fadeIn 1s ease-out;
         }
 
         .hero-content {
@@ -148,13 +125,12 @@
             padding: 20px;
             position: relative;
             z-index: 1;
-            animation: slideIn 0.5s ease-out 0.5s both;
+            text-align: center;
         }
 
         .hero h1 {
             font-size: 48px;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .hero p {
@@ -162,11 +138,11 @@
             margin-bottom: 20px;
         }
 
-        .about-section, .mission-vision, .history {
+        .about-section, .programs-section, .values-section, .help-section {
             padding: 80px 0;
         }
 
-        .about-section, .history {
+        .about-section {
             background-color: #f8f8f8;
         }
 
@@ -175,7 +151,6 @@
             color: #333;
             text-align: center;
             margin-bottom: 40px;
-            animation: slideIn 0.5s ease-out;
         }
 
         .about-content {
@@ -183,6 +158,7 @@
             justify-content: space-between;
             align-items: center;
             gap: 40px;
+            padding: 0 15px;
         }
 
         .about-text {
@@ -196,78 +172,66 @@
         .about-image img {
             width: 100%;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 
+                    8px rgba(0,0,0,0.1);
         }
 
-        .mission-vision-grid {
-            display: flex;
-            justify-content: space-between;
-            gap: 40px;
-        }
-
-        .mission, .vision {
-            flex-basis: 48%;
+        .programs-section {
             background-color: #fff;
-            padding: 30px;
+            padding: 40px 15px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
+        .programs-list {
+            margin-top: 20px;
+            list-style-type: none;
         }
 
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background-color: #4CAF50;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
+        .programs-list li {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            background-color: inherit;
-            width: 50%;
-        }
-
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            right: -17px;
-            background-color: #fff;
-            border: 4px solid #4CAF50;
-            top: 15px;
-            border-radius: 50%;
-            z-index: 1;
-        }
-
-        .left {
-            left: 0;
-        }
-
-        .right {
-            left: 50%;
-        }
-
-        .right::after {
-            left: -16px;
-        }
-
-        .timeline-content {
-            padding: 20px 30px;
-            background-color: #fff;
-            position: relative;
-            border-radius: 6px;
+        .values-section {
+            background-color: #f8f8f8;
+            padding: 40px 15px;
+            border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .values-list {
+            margin-top: 20px;
+            list-style-type: none;
+        }
+
+        .values-list li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+        }
+
+        .help-section {
+            background-color: #fff;
+            padding: 40px 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .help-list {
+            margin-top: 20px;
+            list-style-type: none;
+        }
+
+        .help-list li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
         }
 
         footer {
@@ -280,8 +244,8 @@
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-         }
-        /* Continuing CSS */
+        }
+
         .footer-column {
             flex-basis: calc(25% - 20px);
             margin-bottom: 30px;
@@ -317,33 +281,7 @@
             border-top: 1px solid #555;
         }
 
-        /* Animation Classes */
-        .fade-in {
-            opacity: 0;
-            transition: opacity 0.5s ease-in;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-        }
-
-        .slide-in {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-        }
-
-        .slide-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive Design */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 36px;
-            }
-
             .about-content {
                 flex-direction: column;
             }
@@ -351,33 +289,6 @@
             .about-text, .about-image {
                 flex-basis: 100%;
                 margin-bottom: 20px;
-            }
-
-            .mission-vision-grid {
-                flex-direction: column;
-            }
-
-            .mission, .vision {
-                flex-basis: 100%;
-                margin-bottom: 20px;
-            }
-
-            .timeline::after {
-                left: 31px;
-            }
-
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-
-            .timeline-item::after {
-                left: 15px;
-            }
-
-            .right {
-                left: 0%;
             }
 
             .footer-column {
@@ -406,7 +317,7 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
+                                        <li><a href="faq.html">FAQ</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -415,12 +326,10 @@
         </div>
     </header>
 
-    <section class="hero" style="background-image: url('https://source.unsplash.com/1600x900/?charity,community');">
-        <div class="container">
-            <div class="hero-content">
-                <h1>About Ek Nayi Soch</h1>
-                <p>Empowering communities through education, healthcare, and sustainable development since 2010.</p>
-            </div>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>About Ek Nayi Soch Foundation</h1>
+            <p>Empowering communities through accessible education, social awareness, and sustainable practices.</p>
         </div>
     </section>
 
@@ -429,60 +338,65 @@
             <h2>Our Story</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Founded in 2010, Ek Nayi Soch began with a simple vision: to create positive change in the lives of underprivileged communities in Noida. What started as a small initiative has grown into a comprehensive movement touching thousands of lives.</p>
-                    <p>Our dedicated team of volunteers and professionals works tirelessly to provide quality education, healthcare services, and skill development programs to those in need.</p>
+                    <p>Ek Nayi Soch Foundation is a non-profit organization founded in 2022 with a mission to empower and uplift communities. We believe in creating a healthier, more informed, and equitable future for all.</p>
+                    <p>Our foundation provides free tuition to promote learning, organizes programs to raise awareness on key social issues, protects the environment, and supports women's health by distributing sanitary pads. Through these initiatives, we are dedicated to making a tangible difference in the lives of individuals, families, and communities in need.</p>
                 </div>
                 <div class="about-image">
-                    <img src="https://source.unsplash.com/600x400/?community,helping" alt="Our Impact">
+                    <img src="https://source.unsplash.com/600x400/?community,education" alt="Our Impact">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="mission-vision">
+    <section class="programs-section">
         <div class="container">
-            <div class="mission-vision-grid">
-                <div class="mission">
-                    <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
-                    <p>To empower underprivileged communities through quality education, healthcare, and skill development, creating sustainable positive change in their lives.</p>
-                </div>
-                <div class="vision">
-                    <h3><i class="fas fa-eye"></i> Our Vision</h3>
-                    <p>A world where every individual has access to quality education, healthcare, and opportunities for growth and development.</p>
-                </div>
-            </div>
+            <h2>Our Programs</h2>
+            <ul class="programs-list">
+                <li><strong>Free Tuition Classes:</strong> We offer free educational support to students in Village Hazipur and surrounding areas, ensuring that every child has access to quality education.</li>
+                <li><strong>Awareness Programs:</strong> We conduct various awareness campaigns on critical social issues, empowering individuals with the knowledge they need to make informed decisions.</li>
+                <li><strong>Environmental Initiatives:</strong> Our initiatives focus on protecting the environment through tree planting, waste management awareness, and promoting sustainable practices.</li>
+                <li><strong>Sanitary Pad Distribution:</strong> We distribute sanitary pads to women and girls in the community, promoting women's health and breaking the stigma surrounding menstruation.</li>
+                <li><strong>100 Days Free Study Material Distribution Challenge:</strong> This initiative aimed to provide free study materials to underprivileged children in 100 different locations over 100 days.</li>
+                <li><strong>Ganga Safai Abhiyan:</strong> A dedicated drive to clean and preserve the Ganga River, focusing on removing waste and raising awareness about its importance.</li>
+                <li><strong>Yamuna Safai Abhiyan (Monthly):</strong> An ongoing campaign dedicated to cleaning the Yamuna River, promoting community involvement and responsibility.</li>
+                <li><strong>Plantation Campaign:</strong> This initiative focuses on increasing green cover by planting trees in various areas, promoting environmental sustainability.</li>
+            </ul>
         </div>
     </section>
 
-    <section class="history">
+    <section class="values-section">
         <div class="container">
-            <h2>Our Journey</h2>
-            <div class="timeline">
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <h3>2010</h3>
-                        <p>Founded Ek Nayi Soch with our first education center</p>
-                    </div>
-                </div>
-                <div class="timeline-item right">
-                    <div class="timeline-content">
-                        <h3>2015</h3>
-                        <p>Expanded to healthcare initiatives</p>
-                    </div>
-                </div>
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <h3>2018</h3>
-                        <p>Launched skill development programs</p>
-                    </div>
-                </div>
-                <div class="timeline-item right">
-                    <div class="timeline-content">
-                        <h3>2023</h3>
-                        <p>Reaching 5000+ beneficiaries annually</p>
-                    </div>
-                </div>
-            </div>
+            <h2>Our Core Values</h2>
+            <ul class="values-list">
+                <li><strong>Education for All:</strong> We believe that everyone deserves access to quality education.</li>
+                <li><strong>Empowerment:</strong> We equip individuals with the tools they need to take charge of their futures.</li>
+                <li><strong>Inclusivity:</strong> We embrace diversity and ensure equal opportunities for all.</li>
+                <li><strong>Sustainability:</strong> We focus on long-term solutions that create lasting change.</li>
+                <li><strong>Community Building:</strong> We foster a sense of belonging and collaboration.</li>
+                <li><strong>Integrity and Transparency:</strong> We operate with honesty and accountability.</li>
+                <li><strong>Innovation and Adaptability:</strong> We continuously assess and refine our strategies.</li>
+                <li><strong>Social Responsibility:</strong> We are committed to creating a more just society.</li>
+                <li><strong>Collaboration and Partnerships:</strong> We work alongside local and global organizations.</li>
+                <li><strong>Respect and Dignity:</strong> We treat every individual with compassion and respect.</li>
+            </ul>
+        </div>
+    </section>
+
+       <section class="help-section">
+        <div class="container">
+            <h2>How You Can Help</h2>
+            <p>At Ek Nayi Soch Foundation, we believe that collective action can bring about real change. Here are some ways you can get involved in our mission:</p>
+            <ul class="help-list">
+                <li><strong>Volunteer:</strong> Join our team and contribute your time and skills to make a difference. Sign up on our website for upcoming volunteer opportunities.</li>
+                <li><strong>Donate:</strong> Your financial support helps us provide essential study materials and educational programs. Every contribution makes a significant impact.</li>
+                <li><strong>Sponsor a Student:</strong> Bridge the educational gap by sponsoring a student's education and materials for a specific duration.</li>
+                <li><strong>Spread the Word:</strong> Help us raise awareness by sharing our message on social media and encouraging others to support our cause.</li>
+                <li><strong>Organize a Fundraising Event:</strong> Host a local event to raise funds for our educational initiatives. We will provide support and resources to ensure its success.</li>
+                <li><strong>Collaborate with Us:</strong> Partner with us if you're part of a business, school, or organization to create impactful programs.</li>
+                <li><strong>Advocate for Education:</strong> Use your voice to advocate for educational equity in your community.</li>
+                <li><strong>Join Our Newsletter:</strong> Stay informed about our programs, events, and impact stories by subscribing to our newsletter.</li>
+            </ul>
+            <p>Together, we can build a better future for all. Join Ek Nayi Soch Foundation in our mission to transform lives through education, awareness, and empowerment.</p>
         </div>
     </section>
 
@@ -498,7 +412,7 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="gallery.html">Gallery</a></li >
+                        <li><a href="gallery.html">Gallery</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
