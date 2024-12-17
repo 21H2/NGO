@@ -6,7 +6,7 @@
     <title>About Us - Ek Nayi Soch | NGO in Noida</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @keyframes fadeIn {
+         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
@@ -419,21 +419,21 @@
         <div class="container">
             <div class="hero-content">
                 <h1>About Ek Nayi Soch</h1>
-                <p>Empowering communities through education, healthcare, and sustainable development since 2010.</p>
+                <p>Empowering communities through education, awareness, and sustainable development since 2022.</p>
             </div>
         </div>
     </section>
 
     <section class="about-section">
         <div class="container">
-            <h2>Our Story</h2>
+            <h2>About Us</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Founded in 2010, Ek Nayi Soch began with a simple vision: to create positive change in the lives of underprivileged communities in Noida. What started as a small initiative has grown into a comprehensive movement touching thousands of lives.</p>
-                    <p>Our dedicated team of volunteers and professionals works tirelessly to provide quality education, healthcare services, and skill development programs to those in need.</p>
+                    <p>Ek Nayi Soch Foundation is a non-profit organization founded in 2022 with a mission to empower and uplift communities through accessible education, social awareness, and sustainable practices. At our core, we believe in creating a healthier, more informed, and equitable future for all.</p>
+                    <p>Our foundation provides free tuition to promote learning, organizes programs to raise awareness on key social issues, protects the environment, and supports women’s health by distributing sanitary pads. Through these initiatives, we are dedicated to making a tangible difference in the lives of individuals, families, and communities in need.</p>
                 </div>
                 <div class="about-image">
-                    <img src="https://source.unsplash.com/600x400/?community,helping" alt="Our Impact">
+                    <img src="https://source.unsplash.com/600x400/?help,education" alt="Our Impact">
                 </div>
             </div>
         </div>
@@ -444,11 +444,11 @@
             <div class="mission-vision-grid">
                 <div class="mission">
                     <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
-                    <p>To empower underprivileged communities through quality education, healthcare, and skill development, creating sustainable positive change in their lives.</p>
+                    <p>To empower underprivileged communities through quality education, awareness, and sustainable practices, creating sustainable positive change in their lives.</p>
                 </div>
                 <div class="vision">
                     <h3><i class="fas fa-eye"></i> Our Vision</h3>
-                    <p>A world where every individual has access to quality education, healthcare, and opportunities for growth and development.</p>
+                    <p>A world where every individual has access to education, awareness, and the resources to lead a dignified life.</p>
                 </div>
             </div>
         </div>
@@ -456,30 +456,30 @@
 
     <section class="history">
         <div class="container">
-            <h2>Our Journey</h2>
+            <h2>Our Programs</h2>
             <div class="timeline">
                 <div class="timeline-item left">
                     <div class="timeline-content">
-                        <h3>2010</h3>
-                        <p>Founded Ek Nayi Soch with our first education center</p>
+                        <h3>Free Tuition Classes</h3>
+                        <p>We offer free educational support to students in Village Hazipur and surrounding areas, ensuring that every child has access to quality education regardless of their financial background.</p>
                     </div>
                 </div>
                 <div class="timeline-item right">
                     <div class="timeline-content">
-                        <h3>2015</h3>
-                        <p>Expanded to healthcare initiatives</p>
+                        <h3>Awareness Programs</h3>
+                        <p>We conduct awareness campaigns on key issues like health, environmental conservation, and women’s rights to inspire informed and empowered communities.</p>
                     </div>
                 </div>
                 <div class="timeline-item left">
                     <div class="timeline-content">
-                        <h3>2018</h3>
-                        <p>Launched skill development programs</p>
+                        <h3>Environmental Initiatives</h3>
+                        <p>Our initiatives like tree planting and river cleanups promote sustainability and conservation, involving communities in protecting the environment.</p>
                     </div>
                 </div>
                 <div class="timeline-item right">
                     <div class="timeline-content">
-                        <h3>2023</h3>
-                        <p>Reaching 5000+ beneficiaries annually</p>
+                        <h3>Sanitary Pad Distribution</h3>
+                        <p>We support women’s health by distributing sanitary pads and breaking the stigma around menstruation to promote dignity and hygiene.</p>
                     </div>
                 </div>
             </div>
@@ -491,14 +491,14 @@
             <div class="footer-grid">
                 <div class="footer-column">
                     <h3>About Us</h3>
-                    <p>Ek Nayi Soch is committed to creating positive change in communities through education, healthcare, and skill development initiatives.</p>
+                    <p>Ek Nayi Soch is committed to creating positive change in communities through education, awareness, and sustainable practices.</p>
                 </div>
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="gallery.html">Gallery</a></li >
+                        <li><a href="gallery.html">Gallery</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -527,27 +527,5 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const animateOnScroll = (entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            };
-
-            const observer = new IntersectionObserver(animateOnScroll, {
-                root: null,
-                threshold: 0.1
-            });
-
-            document.querySelectorAll('.fade-in, .slide-in').forEach(item => {
-                observer.observe(item);
-            });
-        });
-    </script>
 </body>
 </html>
